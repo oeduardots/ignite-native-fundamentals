@@ -1,6 +1,11 @@
-import { Text, View, StyleSheet, TextInput } from "react-native"
+import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native"
+
 
 export default function HomeScreen() {
+  function handleParticipantAdd() {
+    console.log("Você clicou no botão de Adicionar!")
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>
@@ -15,6 +20,12 @@ export default function HomeScreen() {
         placeholder="Nome do participante" 
         placeholderTextColor="#6b6b6b"
       />
+
+      <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
+        <Text style={styles.buttonText}>
+          +
+        </Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -42,5 +53,17 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     padding: 16,
     fontSize: 16
+  },
+  buttonText: {
+    color: '#ffffff',
+    fontSize: 24
+  },
+  button: {
+    width: 56,
+    height: 56,
+    borderRadius: 5,
+    backgroundColor: '#31cf67',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
