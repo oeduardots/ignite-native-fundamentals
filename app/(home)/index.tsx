@@ -2,7 +2,7 @@ import {
   Text, 
   View, 
   TextInput, 
-  ScrollView,
+  FlatList,
   TouchableOpacity,
 } from "react-native"
 
@@ -44,17 +44,23 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {
-          participants.map(participant => (
-            <Participant
-              key={participant}
-              name={participant}
-              onRemove={() => handleParticipantRemove("Eduardo")}
-            />
-          ))
-        }
-      </ScrollView>
+      <FlatList 
+        data={participants}
+        keyExtractor={item => item}
+        renderItem={({ item }) => (
+          <Participant
+            key={item}
+            name={item}
+            onRemove={() => handleParticipantRemove("Eduardo")}
+          />
+        )}
+        showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => (
+          <Text style={styles.listEmptyText}>
+            Ninguém chegou ao evendo ainda? Adicione participantes a sua lista de presença.
+          </Text>
+        )}
+      />
     </View>
   )
 }
