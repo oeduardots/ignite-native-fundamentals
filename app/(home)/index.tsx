@@ -4,6 +4,7 @@ import {
   TextInput, 
   FlatList,
   TouchableOpacity,
+  StatusBar,
 } from "react-native"
 
 import { styles } from './styles'
@@ -23,6 +24,12 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <StatusBar 
+        barStyle="light-content" 
+        backgroundColor="#131016"
+        translucent
+      />
+      
       <Text style={styles.eventName}>
         Nome do evento
       </Text>
