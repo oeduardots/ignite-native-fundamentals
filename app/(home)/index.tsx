@@ -32,8 +32,10 @@ export default function HomeScreen() {
         </TouchableOpacity>
       </View>
 
-      <Participant />
-      <Participant />
+      <Participant name="Eduardo Tavares" />
+      <Participant name="Rodrigo Gonçalves" />
+      <Participant name="Diego Fernandes" />
+      <Participant name="Mayk Brito" />
     </View>
   )
 }
