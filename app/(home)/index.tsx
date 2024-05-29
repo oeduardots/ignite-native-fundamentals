@@ -2,6 +2,8 @@ import { Text, View, TextInput, TouchableOpacity } from "react-native"
 
 import { styles } from './styles'
 
+import { Participant } from '../components/participant'
+
 export default function HomeScreen() {
   function handleParticipantAdd() {
     console.log("Você clicou no botão de Adicionar!")
@@ -29,6 +31,9 @@ export default function HomeScreen() {
           </Text>
         </TouchableOpacity>
       </View>
+
+      <Participant />
+      <Participant />
     </View>
   )
 }
