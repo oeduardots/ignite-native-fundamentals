@@ -11,7 +11,7 @@ import {
 
 import { styles } from './styles'
 
-import { Participant } from '../components/participant'
+import { Participant } from '../../components/participant'
 
 export default function HomeScreen() {
   const [participants, setParticipants] = useState<string[]>([])
@@ -37,8 +37,6 @@ export default function HomeScreen() {
         style: "cancel",
       }
     ])
-
-    console.log(`Você clicou em remover o participante ${name}`)
   }
 
   return (
