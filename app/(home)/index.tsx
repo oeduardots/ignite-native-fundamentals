@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { 
   Text, 
   View, 
@@ -13,13 +14,14 @@ import { styles } from './styles'
 import { Participant } from '../components/participant'
 
 export default function HomeScreen() {
-  const participants = ["Eduardo", "Rodrigo" ,"Diego", "Mayk", "Antônio", "João", "Fernanda", "Gustavo", "Otávio", "Daniel"]
+  const [participants, setParticipants] = useState([""])
 
   function handleParticipantAdd() {
     if (participants.includes("Eduardo")) {
       return Alert.alert("Participante Existe", "Já existe um participante na lista com esse nome.")
     }
 
+    setParticipants(state => [...state, 'Ana'])
     console.log("Você clicou no botão de Adicionar!")
   }
 
@@ -43,7 +45,6 @@ export default function HomeScreen() {
       <StatusBar 
         barStyle="light-content" 
         backgroundColor="#131016"
-        translucent
       />
       
       <Text style={styles.eventName}>
