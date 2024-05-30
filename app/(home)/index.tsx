@@ -5,6 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
   StatusBar,
+  Alert,
 } from "react-native"
 
 import { styles } from './styles'
@@ -15,10 +16,25 @@ export default function HomeScreen() {
   const participants = ["Eduardo", "Rodrigo" ,"Diego", "Mayk", "Antônio", "João", "Fernanda", "Gustavo", "Otávio", "Daniel"]
 
   function handleParticipantAdd() {
+    if (participants.includes("Eduardo")) {
+      return Alert.alert("Participante Existe", "Já existe um participante na lista com esse nome.")
+    }
+
     console.log("Você clicou no botão de Adicionar!")
   }
 
   function handleParticipantRemove(name: string) {
+    Alert.alert("Remover", `Remover o participante ${name}?`, [
+      {
+        text: "Sim",
+        onPress: () => Alert.alert("Deletado!"),
+      },
+      {
+        text: "Não",
+        style: "cancel",
+      }
+    ])
+
     console.log(`Você clicou em remover o participante ${name}`)
   }
 
